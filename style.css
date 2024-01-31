@@ -15,5 +15,5 @@ body{
     flex-direction: column;
     align-content: center;
     align-items: center;
-    justify-content: space-around;
+    justify-content: center;
 }
