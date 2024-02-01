@@ -28,6 +28,7 @@ body {
 #mainContainer {
     border: 1px red solid;
     width: 50.7vw;
+    max-width: 650px;
     height: 57vh;
     margin-top: 19vh;
     display: grid;
@@ -36,53 +37,51 @@ body {
     /*convert to fr*/
     grid-template-columns: 1fr 1fr .5fr .5fr;
     grid-template-rows: .7fr .2fr 0.2fr 1fr;
+    /*use calc()*/
+    grid-gap: 1.5em;
 }
 
 #cont1 {
-    border: black solid 1px;
     border-radius: 25px;
     grid-row: 1/3;
 }
 
 #cont2 {
-    border: black solid 1px;
     border-radius: 25px;
     grid-column: 2 / 4;
 }
 
 #cont3 {
-    border: black solid 1px;
     border-radius: 25px;
 }
 
 #cont4 {
-    border: black solid 1px;
     border-radius: 25px;
     grid-column: 1;
     grid-row: 3/5;
 }
 
 #cont5 {
-    border: black solid 1px;
     border-radius: 25px;
     grid-column: 2/5;
     grid-row: 2/4;
 }
 
 #cont6 {
-    border: black solid 1px;
     border-radius: 25px;
     grid-column: 2/3;
 }
 
 #cont7 {
-    border: black solid 1px;
     border-radius: 25px;
     grid-column: 3/5;
 }
 
 .glass {
     background-image: linear-gradient(to bottom, rgba(217, 217, 217, 1), rgba(217, 217, 217, 0));
+    border: 2px solid #C2C2C2;
+    filter: drop-shadow(0 0.4em 0.4em grey);
+    backdrop-filter: blur(40px);
 }
 
 
@@ -91,6 +90,9 @@ body {
     border: 1px red solid;
     border-radius: 20px;
     width: 22.4vw;
+    max-width: 290px;
     height: 4.1vh;
     margin-top: 2.4vh;
 }
+
+/*https://www.toptal.com/designers/ui/neumorphic-ui-design*/
