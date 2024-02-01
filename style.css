@@ -30,71 +30,59 @@ body {
     width: 50.7vw;
     height: 57vh;
     margin-top: 19vh;
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    justify-content: flex-end;
+    display: grid;
+    /*grid-template-columns: 33% 33% 19% 15%;
+    grid-template-rows: 35% 10% 10% 45%;*/
+    /*convert to fr*/
+    grid-template-columns: 1fr 1fr .5fr .5fr;
+    grid-template-rows: .7fr .2fr 0.2fr 1fr;
 }
 
 #cont1 {
     border: black solid 1px;
-    width: 15.8vw;
-    height: 21.7vh;
     border-radius: 25px;
+    grid-row: 1/3;
 }
 
 #cont2 {
     border: black solid 1px;
-    width: 21.5vw;
-    height: 17.4vh;
     border-radius: 25px;
-    margin: 0vw 1.7vw;
+    grid-column: 2 / 4;
 }
 
 #cont3 {
     border: black solid 1px;
-    width: 8vw;
-    height: 17.4vh;
     border-radius: 25px;
 }
 
 #cont4 {
     border: black solid 1px;
-    width: 15.8vw;
-    height: 29.9vh;
     border-radius: 25px;
-    margin-top: 2.44vh;
+    grid-column: 1;
+    grid-row: 3/5;
 }
 
 #cont5 {
     border: black solid 1px;
-    width: 31.2vw;
-    height: 7.8vh;
     border-radius: 25px;
-    margin-left: 1.7vw;
-
+    grid-column: 2/5;
+    grid-row: 2/4;
 }
 
 #cont6 {
     border: black solid 1px;
-    width: 20.7vh;
-    height: 20.7vh;
     border-radius: 25px;
-    margin-left: 17.5vw;
-    margin-right: 1.7vw;
-    margin-top: -21vh;
+    grid-column: 2/3;
 }
 
 #cont7 {
     border: black solid 1px;
-    width: 20.7vh;
-    height: 20.7vh;
     border-radius: 25px;
-    margin-top: -21vh;
+    grid-column: 3/5;
 }
 
 .glass {
-    background-image: linear-gradient(to bottom, rgba(217, 217, 217, 1), rgba(38, 38, 38, 0));
+    background-image: linear-gradient(to bottom, rgba(217, 217, 217, 1), rgba(217, 217, 217, 0));
 }
 
 
