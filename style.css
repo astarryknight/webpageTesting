@@ -2,135 +2,178 @@
 
 html,
 body {
-	color: black;
-	text-align: center;
-	font-family: Outfit;
-	font-size: 12px;
-	font-style: normal;
-	font-weight: 700;
-	line-height: normal;
+    color: black;
+    text-align: center;
+    font-family: Outfit;
+    font-size: 12px;
+    font-style: normal;
+    font-weight: 700;
+    line-height: normal;
 }
 
 body {
-	width: 100%;
-	height: 100%;
-	display: flex;
-	flex-direction: column;
-	align-items: center;
-	justify-content: center;
-	margin: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: center;
+    margin: 0;
 }
+
+
+#bg {
+    position: absolute;
+    top: 0vh;
+    width: 115vh;
+    max-width: 1100px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+}
+
 
 /*TODO HEADING*/
-#headerContainer{
-	border: 1px red solid;
-	width: 50.7vw;
-	max-width: 650px;
-	height: 10vh;
-	display: grid;
-	grid-template-columns: 1fr .1fr;
-	grid-template-rows: 1fr 1fr;
+#headerContainer {
+    width: 50.7vw;
+    max-width: 650px;
+    height: 10vh;
+    display: grid;
+    grid-template-columns: 1fr .1fr;
+    grid-template-rows: 1fr 1fr;
+    margin-top: 7vh;
 }
 
-#mainText{
-	align-items: flex-start;
-	display: flex;
-	justify-content: flex-start;
-	font-size: 4em;
+#mainText {
+    align-items: flex-start;
+    display: flex;
+    justify-content: flex-start;
+    font-size: 4em;
 }
 
-#subText{
-	grid-row: 2/3;
+#subText {
+    grid-row: 2/3;
     display: flex;
     font-size: 1.75em;
-	align-items: center;
+    align-items: center;
+    font-weight: normal;
 }
 
-#thmToggle{
-	grid-row: 2/3;
-	display: flex;
+#thmToggle {
+    grid-row: 2/3;
+    display: flex;
     justify-content: flex-end;
     align-items: center;
 }
 
 /*https://icon-sets.iconify.design/basil/moon-solid/*/
-#thmToggle svg{
-	width: 2em;
+#thmToggle svg {
+    width: 2em;
 }
 
-#thmToggle svg:hover{
-	cursor:pointer;
+s #thmToggle svg:hover {
+    cursor: pointer;
 }
 
 
 /*main content area*/
 #mainContainer {
-	border: 1px red solid;
-	width: 50.7vw;
-	max-width: 650px;
-	height: 57vh;
-	display: grid;
-	/*grid-template-columns: 33% 33% 19% 15%;
+    width: 50.7vw;
+    max-width: 650px;
+    height: 57vh;
+    display: grid;
+    /*grid-template-columns: 33% 33% 19% 15%;
 	grid-template-rows: 35% 10% 10% 45%;*/
-	/*convert to fr*/
-	grid-template-columns: 1fr 1fr .5fr .5fr;
-	grid-template-rows: .7fr .2fr 0.2fr 1fr;
-	/*use calc()*/
-	grid-gap: 1.5em;
+    /*convert to fr*/
+    grid-template-columns: 1fr 1fr .5fr .5fr;
+    grid-template-rows: .7fr .2fr 0.2fr 1fr;
+    /*use calc()*/
+    grid-gap: 1.5em;
 }
 
 #cont1 {
-	border-radius: 25px;
-	grid-row: 1/3;
+    border-radius: 25px;
+    grid-row: 1/3;
 }
 
 #cont2 {
-	border-radius: 25px;
-	grid-column: 2 / 4;
+    border-radius: 25px;
+    grid-column: 2 / 4;
 }
 
 #cont3 {
-	border-radius: 25px;
+    border-radius: 25px;
 }
 
 #cont4 {
-	border-radius: 25px;
-	grid-column: 1;
-	grid-row: 3/5;
+    border-radius: 25px;
+    grid-column: 1;
+    grid-row: 3/5;
 }
 
 #cont5 {
-	border-radius: 25px;
-	grid-column: 2/5;
-	grid-row: 2/4;
+    border-radius: 25px;
+    grid-column: 2/5;
+    grid-row: 2/4;
 }
 
 #cont6 {
-	border-radius: 25px;
-	grid-column: 2/3;
+    border-radius: 25px;
+    grid-column: 2/3;
 }
 
 #cont7 {
-	border-radius: 25px;
-	grid-column: 3/5;
+    border-radius: 25px;
+    grid-column: 3/5;
 }
 
 .glass {
-	background-image: linear-gradient(to bottom, rgba(217, 217, 217, 1), rgba(217, 217, 217, 0));
-	border: 2px solid #C2C2C2;
-	filter: drop-shadow(0 0.4em 0.4em grey);
-	backdrop-filter: blur(40px);
+    background-image: linear-gradient(to bottom, rgba(217, 217, 217, 1), rgba(217, 217, 217, 0));
+    border: 2px solid #C2C2C2;
+    filter: drop-shadow(0 0.4em 0.4em grey);
+    backdrop-filter: blur(5px);
 }
 
 
 /*navbar*/
 #navContainer {
-	border: 1px red solid;
-	border-radius: 20px;
-	width: 22.4vw;
-	max-width: 290px;
-	height: 4.1vh;
-	margin-top: 2.4vh;
+    border: 2px #C2C2C2 solid;
+    border-radius: 20px;
+    width: 22.4vw;
+    max-width: 290px;
+    height: 4.1vh;
+    margin-top: 2.4vh;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-around;
+    align-items: center;
+    background: rgba(217, 217, 217, .4);
+    backdrop-filter: blur(20px);
+}
+
+#navContainer div:hover {
+    cursor: pointer;
+}
+
+#blueBox {
+    background-color: #2013BB;
+    color: white;
+    width: 31%;
+    height: 80%;
+    border-radius: 20px;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+}
+
+.noSelect {
+    width: 31%;
+}
+
+.select {
+    width: auto;
 }
 
 /*https://www.toptal.com/designers/ui/neumorphic-ui-design*/
