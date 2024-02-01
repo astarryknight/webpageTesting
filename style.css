@@ -1,8 +1,35 @@
 /*Figma dimensions: 1440 x 1024 - all vw and vh dimensions derived from this number and pixel width/height*/
 
+
+/*declaring css vars*/
+:root {
+    --body-bglm: white;
+    --body-bgdm: #09050F;
+    --text-lm: black;
+    --text-dm: white;
+    --glass-bglm: linear-gradient(to bottom, rgba(217, 217, 217, 1), rgba(217, 217, 217, 0));
+    --glass-bgdm: linear-gradient(to bottom, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0));
+}
+
+@media(prefers-color-scheme: dark) {
+    :root {
+        --text: var(--text-dm);
+        --body-bg: var(--body-bgdm);
+        --glass-bg: var(--glass-bgdm);
+    }
+}
+
+@media(prefers-color-scheme: light) {
+    :root {
+        --text: var(--text-lm);
+        --body-bg: var(--body-bglm);
+        --glass-bg: var(--glass-bglm);
+    }
+}
+
 html,
 body {
-    color: black;
+    color: var(--text);
     text-align: center;
     font-family: Outfit;
     font-size: 12px;
@@ -19,6 +46,7 @@ body {
     align-items: center;
     justify-content: center;
     margin: 0;
+    background-color: var(--body-bg);
 }
 
 
@@ -32,6 +60,11 @@ body {
     margin-right: auto;
     left: 0;
     right: 0;
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
 }
 
 
@@ -44,6 +77,7 @@ body {
     grid-template-columns: 1fr .1fr;
     grid-template-rows: 1fr 1fr;
     margin-top: 7vh;
+    z-index: 1;
 }
 
 #mainText {
@@ -73,7 +107,7 @@ body {
     width: 2em;
 }
 
-s #thmToggle svg:hover {
+#thmToggle svg:hover {
     cursor: pointer;
 }
 
@@ -91,6 +125,7 @@ s #thmToggle svg:hover {
     grid-template-rows: .7fr .2fr 0.2fr 1fr;
     /*use calc()*/
     grid-gap: 1.5em;
+    z-index: 0;
 }
 
 #cont1 {
@@ -130,7 +165,7 @@ s #thmToggle svg:hover {
 }
 
 .glass {
-    background-image: linear-gradient(to bottom, rgba(217, 217, 217, 1), rgba(217, 217, 217, 0));
+    background-image: var(--glass-bg);
     border: 2px solid #C2C2C2;
     filter: drop-shadow(0 0.4em 0.4em grey);
     backdrop-filter: blur(5px);
@@ -175,5 +210,7 @@ s #thmToggle svg:hover {
 .select {
     width: auto;
 }
+
+
 
 /*https://www.toptal.com/designers/ui/neumorphic-ui-design*/
