@@ -4,6 +4,7 @@
 
 /*declaring css vars*/
 :root {
+    /*dark/light mode themes*/
     --body-bglm: white;
     --body-bgdm: #09050F;
     --text-lm: black;
@@ -16,6 +17,9 @@
     --moon-lm: none;
     --sun-dm: none;
     --sun-lm: block;
+
+    /*bg image rotation*/
+    --svg-rot-deg: 0deg;
 }
 
 @media(prefers-color-scheme: dark) {
@@ -78,7 +82,10 @@ body {
     justify-content: center;
     margin: 0;
     background-color: var(--body-bg);
-    transition: ease .75s;
+    transition: ease-out .5s;
+
+    /*svg background rotation adds a scollbar at the bottom - todo fix*/
+    overflow: hidden;
 }
 
 
@@ -92,11 +99,14 @@ body {
     margin-right: auto;
     left: 0;
     right: 0;
+    /*no highlighting*/
     user-select: none;
     -moz-user-select: none;
     -khtml-user-select: none;
     -webkit-user-select: none;
     -o-user-select: none;
+    transform: rotate(var(--svg-rot-deg));
+    transition: all .75s cubic-bezier(0.45, 0.05, 0.55, 0.95) 0s;
 }
 
 
@@ -232,8 +242,8 @@ body {
     cursor: pointer;
 }
 
-#blueBox {
-    background-color: #2013BB;
+.blueBox {
+    /*background-color: #2013BB;*/
     color: white;
     width: 31%;
     height: 80%;
@@ -243,12 +253,16 @@ body {
     justify-content: center;
 }
 
-.noSelect {
+div.noSelect ~ .blueBox {
     width: 31%;
+    background:transparent;
+    border: 1px red solid;
+
 }
 
-.select {
+.select span {
     width: auto;
+    background:blue;
 }
 
 
