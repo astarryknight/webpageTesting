@@ -1,4 +1,5 @@
 /*Figma dimensions: 1440 x 1024 - all vw and vh dimensions derived from this number and pixel width/height*/
+/*todo - add fade in/on-load animations
 
 
 /*declaring css vars*/
@@ -11,6 +12,10 @@
     --glass-bgdm: linear-gradient(to bottom, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0));
     --glass-bdrlm: #C2C2C2;
     --glass-bdrdm: #1E1E1E;
+    --moon-dm: block;
+    --moon-lm: none;
+    --sun-dm: none;
+    --sun-lm: block;
 }
 
 @media(prefers-color-scheme: dark) {
@@ -19,6 +24,8 @@
         --body-bg: var(--body-bgdm);
         --glass-bg: var(--glass-bgdm);
         --glass-border: var(--glass-bdrdm);
+        --moon: var(--moon-dm);
+        --sun: var(--sun-dm);
     }
 }
 
@@ -28,7 +35,27 @@
         --body-bg: var(--body-bglm);
         --glass-bg: var(--glass-bglm);
         --glass-border: var(--glass-bdrlm);
+        --moon: var(--moon-lm);
+        --sun: var(--sun-lm);
     }
+}
+
+[color-scheme="dark"] {
+    --text: var(--text-dm);
+    --body-bg: var(--body-bgdm);
+    --glass-bg: var(--glass-bgdm);
+    --glass-border: var(--glass-bdrdm);
+    --moon: var(--moon-dm);
+    --sun: var(--sun-dm);
+}
+
+[color-scheme="light"] {
+    --text: var(--text-lm);
+    --body-bg: var(--body-bglm);
+    --glass-bg: var(--glass-bglm);
+    --glass-border: var(--glass-bdrlm);
+    --moon: var(--moon-lm);
+    --sun: var(--sun-lm);
 }
 
 html,
@@ -51,6 +78,7 @@ body {
     justify-content: center;
     margin: 0;
     background-color: var(--body-bg);
+    transition: ease .75s;
 }
 
 
@@ -113,6 +141,14 @@ body {
 
 #thmToggle svg:hover {
     cursor: pointer;
+}
+
+#moon {
+    display: var(--moon);
+}
+
+#sun {
+    display: var(--sun);
 }
 
 
