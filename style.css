@@ -89,27 +89,6 @@ body {
 }
 
 
-#bg {
-    position: absolute;
-    top: 0vh;
-    width: 115vh;
-    max-width: 1100px;
-    position: absolute;
-    margin-left: auto;
-    margin-right: auto;
-    left: 0;
-    right: 0;
-    /*no highlighting*/
-    user-select: none;
-    -moz-user-select: none;
-    -khtml-user-select: none;
-    -webkit-user-select: none;
-    -o-user-select: none;
-    transform: rotate(var(--svg-rot-deg));
-    transition: all .75s cubic-bezier(0.45, 0.05, 0.55, 0.95) 0s;
-}
-
-
 /*TODO HEADING*/
 #headerContainer {
     width: 50.7vw;
@@ -163,6 +142,34 @@ body {
 
 
 /*main content area*/
+#wrapper{
+    height: 57vh;
+    width: auto;
+    max-width: 755px;
+    border: 1px solid red;
+    display: flex;
+    flex-direction: row;
+}
+
+.arrow{
+    width:1em;
+    width: 3em;
+    fill: grey;
+}
+
+.arrow:hover{
+    /*fix this*/
+    cursor:pointer;
+}
+
+#rArrow{
+    transform: rotate(270deg);
+}
+
+#lArrow{
+    transform: rotate(90deg);
+}
+
 #mainContainer {
     width: 50.7vw;
     max-width: 650px;
@@ -176,6 +183,26 @@ body {
     /*use calc()*/
     grid-gap: 1.5em;
     z-index: 0;
+}
+
+#bg {
+    position: absolute;
+    top: 0vh;
+    width: 115vh;
+    max-width: 1100px;
+    position: absolute;
+    margin-left: auto;
+    margin-right: auto;
+    left: 0;
+    right: 0;
+    /*no highlighting*/
+    user-select: none;
+    -moz-user-select: none;
+    -khtml-user-select: none;
+    -webkit-user-select: none;
+    -o-user-select: none;
+    transform: rotate(var(--svg-rot-deg));
+    transition: all .75s cubic-bezier(0.45, 0.05, 0.55, 0.95) 0s;
 }
 
 #cont1 {
