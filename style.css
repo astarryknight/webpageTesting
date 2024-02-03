@@ -1,6 +1,17 @@
 /*Figma dimensions: 1440 x 1024 - all vw and vh dimensions derived from this number and pixel width/height*/
 /*todo - add fade in/on-load animations
 
+/*fade-in animation*/
+@keyframes fadeIn {
+    from {
+        opacity: 0;
+    }
+
+    to {
+        opacity: 1;
+    }
+}
+
 
 /*declaring css vars*/
 :root {
@@ -83,6 +94,7 @@ body {
     margin: 0;
     background-color: var(--body-bg);
     transition: ease-out .5s;
+    animation: fadeIn 1.25s ease-out;
 
     /*svg background rotation adds a scollbar at the bottom - todo fix*/
     overflow: hidden;
@@ -142,32 +154,35 @@ body {
 
 
 /*main content area*/
-#wrapper{
+#wrapper {
     height: 57vh;
     width: auto;
     max-width: 755px;
-    border: 1px solid red;
     display: flex;
     flex-direction: row;
 }
 
-.arrow{
-    width:1em;
+.arrow {
+    width: 1em;
     width: 3em;
-    fill: grey;
+    color: grey;
+    z-index: 2;
+    transition: .25s ease-out;
 }
 
-.arrow:hover{
+.arrow path:hover {
     /*fix this*/
-    cursor:pointer;
+    cursor: pointer;
 }
 
-#rArrow{
-    transform: rotate(270deg);
-}
-
-#lArrow{
+#rArrow {
     transform: rotate(90deg);
+    margin-left: 1em;
+}
+
+#lArrow {
+    transform: rotate(270deg);
+    margin-right: 1em;
 }
 
 #mainContainer {
@@ -280,16 +295,16 @@ body {
     justify-content: center;
 }
 
-div.noSelect ~ .blueBox {
+div.noSelect~.blueBox {
     width: 31%;
-    background:transparent;
+    background: transparent;
     border: 1px red solid;
 
 }
 
 .select span {
     width: auto;
-    background:blue;
+    background: blue;
 }
 
 
