@@ -24,6 +24,8 @@
     --glass-bgdm: linear-gradient(to bottom, rgba(38, 38, 38, 1), rgba(38, 38, 38, 0));
     --glass-bdrlm: #C2C2C2;
     --glass-bdrdm: #1E1E1E;
+    --nav-bgdm: rgba(38, 38, 38, 0.4);
+    --nav-bglm: rgba(217, 217, 217, .4);
     --moon-dm: block;
     --moon-lm: none;
     --sun-dm: none;
@@ -39,6 +41,7 @@
         --body-bg: var(--body-bgdm);
         --glass-bg: var(--glass-bgdm);
         --glass-border: var(--glass-bdrdm);
+        --nav-bg: var(--nav-bgdm);
         --moon: var(--moon-dm);
         --sun: var(--sun-dm);
     }
@@ -50,6 +53,7 @@
         --body-bg: var(--body-bglm);
         --glass-bg: var(--glass-bglm);
         --glass-border: var(--glass-bdrlm);
+        --nav-bg: var(--nav-bglm);
         --moon: var(--moon-lm);
         --sun: var(--sun-lm);
     }
@@ -94,7 +98,6 @@ body {
     margin: 0;
     background-color: var(--body-bg);
     transition: ease-out .5s;
-    animation: fadeIn 1.25s ease-out;
 
     /*svg background rotation adds a scollbar at the bottom - todo fix*/
     overflow: hidden;
@@ -111,6 +114,7 @@ body {
     grid-template-rows: 1fr 1fr;
     margin-top: 7vh;
     z-index: 1;
+    animation: fadeIn 1.25s ease-out;
 }
 
 #mainText {
@@ -218,6 +222,7 @@ body {
     -o-user-select: none;
     transform: rotate(var(--svg-rot-deg));
     transition: all .75s cubic-bezier(0.45, 0.05, 0.55, 0.95) 0s;
+    animation: fadeIn 1.75s ease-out;
 }
 
 #cont1 {
@@ -276,8 +281,9 @@ body {
     flex-direction: row;
     justify-content: space-around;
     align-items: center;
-    background: rgba(217, 217, 217, .4);
+    background: var(--nav-bg);
     backdrop-filter: blur(20px);
+    animation: fadeIn 1.75s ease-out;
 }
 
 #navContainer div:hover {
