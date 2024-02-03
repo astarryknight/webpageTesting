@@ -58,19 +58,22 @@ for (i = 0; i < nav.length; i++) {
             } else {
                 return null; //error
             }
-            document.getElementById(getNavElement(navPos)).classList.add("select");
-            document.getElementById(getNavElement(navPos)).classList.remove("noSelect");
-            document.getElementById(getNavElement(navPos)).parentElement.style.background = "#2013BB";
         });
     }
 }
 
 //arrow navigation handling
 document.getElementById("rArrow").addEventListener("click", function (e) {
+    document.getElementById(getNavElement(navPos)).classList.remove("select");
+    document.getElementById(getNavElement(navPos)).classList.add("noSelect");
+    document.getElementById(getNavElement(navPos)).parentElement.style.background = "transparent";
     navPos++;
     updateMain();
 });
 document.getElementById("lArrow").addEventListener("click", function (e) {
+    document.getElementById(getNavElement(navPos)).classList.remove("select");
+    document.getElementById(getNavElement(navPos)).classList.add("noSelect");
+    document.getElementById(getNavElement(navPos)).parentElement.style.background = "transparent";
     navPos--;
     updateMain();
 });
@@ -90,6 +93,9 @@ function updateMain() {
         document.getElementById("lArrow").style.opacity = 1;
         document.getElementById("rArrow").style.opacity = 0;
     }
+    document.getElementById(getNavElement(navPos)).classList.add("select");
+    document.getElementById(getNavElement(navPos)).classList.remove("noSelect");
+    document.getElementById(getNavElement(navPos)).parentElement.style.background = "#2013BB";
 }
 
 //update page on-load
