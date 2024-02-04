@@ -78,7 +78,7 @@ document.getElementById("lArrow").addEventListener("click", function (e) {
     updateMain();
 });
 
-//position handling (todo - implememnt pages layout)
+//position handling (todo - make sure button can't be clicked even when it's hidden using class "noClick")
 function updateMain() {
     if (navPos == 0) {
         document.getElementById("bg").style.setProperty('--svg-rot-deg', 0 + "deg");
@@ -93,10 +93,29 @@ function updateMain() {
         document.getElementById("lArrow").style.opacity = 1;
         document.getElementById("rArrow").style.opacity = 0;
     }
+    moveNew();
     document.getElementById(getNavElement(navPos)).classList.add("select");
     document.getElementById(getNavElement(navPos)).classList.remove("noSelect");
     document.getElementById(getNavElement(navPos)).parentElement.style.background = "#2013BB";
 }
+
+//temp func new
+function moveNew() {
+    main = document.getElementById("mainContainer");
+    if (navPos == 0) {
+        main.style.gridTemplateRows = ".7fr .2fr 0.2fr 1fr";
+        main.style.gridTemplateColumns = "1fr 1fr .5fr .5fr";
+    } else if (navPos == 1) {
+        main.style.gridTemplateRows = "1fr .2fr 0.2fr .7fr";
+        main.style.gridTemplateColumns = "1fr 1fr .5fr .5fr";
+    } else if (navPos == 2) {
+        main.style.gridTemplateRows = "1fr .2fr 0.2fr .7fr";
+        main.style.gridTemplateColumns = ".75fr 0.5fr 0.75fr 0.5fr";
+    }
+}
+
+
+//todo - separate by files for ease of access and readability
 
 //update page on-load
 updateMain();

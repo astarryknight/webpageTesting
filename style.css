@@ -128,7 +128,7 @@ body {
     grid-row: 2/3;
     display: flex;
     font-size: 1.75em;
-    align-items: center;
+    align-items: flex-start;
     font-weight: normal;
 }
 
@@ -196,12 +196,13 @@ body {
     display: grid;
     /*grid-template-columns: 33% 33% 19% 15%;
 	grid-template-rows: 35% 10% 10% 45%;*/
-    /*convert to fr*/
+    /*convert to fr
     grid-template-columns: 1fr 1fr .5fr .5fr;
     grid-template-rows: .7fr .2fr 0.2fr 1fr;
-    /*use calc()*/
+    //use calc()*/
     grid-gap: 1.5em;
     z-index: 0;
+    transition: 1s ease-out;
 }
 
 #bg {
@@ -314,5 +315,9 @@ div.noSelect~.blueBox {
 }
 
 
+
+.noClick {
+    pointer-events: none;
+}
 
 /*https://www.toptal.com/designers/ui/neumorphic-ui-design*/
