@@ -293,7 +293,7 @@ body {
 
 .blueBox {
     /*background-color: #2013BB;*/
-    color: white;
+    color: var(--text);
     width: 31%;
     height: 80%;
     border-radius: 20px;
@@ -318,6 +318,7 @@ div.noSelect~.blueBox {
 
 .noClick {
     pointer-events: none;
+    border: red solid 1px;
 }
 
 /*https://www.toptal.com/designers/ui/neumorphic-ui-design*/
