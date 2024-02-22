@@ -96,34 +96,28 @@ function updateMain() {
 	right = document.getElementById("rArrow");
     if (navPos == 0) {
         document.getElementById("bg").style.setProperty('--svg-rot-deg', 0 + "deg");
-        addClass(right, left);
         left.style.opacity = 0;
+        left.style.zIndex=-1;
         right.style.opacity = 1;
+        right.style.zIndex=1;
     } else if (navPos == 1) {
         document.getElementById("bg").style.setProperty('--svg-rot-deg', rotInc + "deg");
-        addClass(right, left);
         left.style.opacity = 1;
+        left.style.zIndex=1;
         right.style.opacity = 1;
+        right.style.zIndex=1;
     } else if (navPos == 2) {
         document.getElementById("bg").style.setProperty('--svg-rot-deg', (2 * rotInc) + "deg");
-        addClass(right, left);
         left.style.opacity = 1;
+        left.style.zIndex=1;
         right.style.opacity = 0;
+        right.style.zIndex=-1;
     }
     moveNew();
     document.getElementById(getNavElement(navPos)).classList.add("select");
     document.getElementById(getNavElement(navPos)).classList.remove("noSelect");
     document.getElementById(getNavElement(navPos)).parentElement.style.background = "#2013BB";
     document.getElementById(getNavElement(navPos)).parentElement.style.color = "white";
-}
-
-function addClass(right, left){
-    if(hasClass(left, "noClick")){
-        left.classList.add("noClick");
-    }
-    if(hasClass(right, "noClick")){
-        right.classList.remove("noClick");
-    }
 }
 
 //temp func new
