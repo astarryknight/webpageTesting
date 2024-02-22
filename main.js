@@ -19,6 +19,7 @@ document.getElementById("thmToggle").addEventListener("click", function (e) {
         for(i=0;i<b.length;i++) { b.color="black" }
     }
     tg++;
+    updateMain();
 });
 
 
@@ -114,10 +115,18 @@ function updateMain() {
         right.style.zIndex=-1;
     }
     moveNew();
-    document.getElementById(getNavElement(navPos)).classList.add("select");
-    document.getElementById(getNavElement(navPos)).classList.remove("noSelect");
-    document.getElementById(getNavElement(navPos)).parentElement.style.background = "#2013BB";
-    document.getElementById(getNavElement(navPos)).parentElement.style.color = "white";
+    //update colors for navbar
+    for(i=0;i<3;i++){
+        if(i==navPos){
+            document.getElementById(getNavElement(navPos)).classList.add("select");
+            document.getElementById(getNavElement(navPos)).classList.remove("noSelect");
+            document.getElementById(getNavElement(navPos)).parentElement.style.background = "#2013BB";
+            document.getElementById(getNavElement(navPos)).parentElement.style.color = "white";
+        } else{
+            //ternary :)
+            document.getElementById(getNavElement(i)).parentElement.style.color = (tg % 2 == 0) ? "black" : "white";
+        }
+    }
 }
 
 //temp func new
@@ -137,8 +146,6 @@ function moveNew() {
 
 
 //todo - separate by files for ease of access and readability
-
-console.log(hasClass(document.getElementById("rArrow"), "arrow"));
 
 //update page on-load
 updateMain();
