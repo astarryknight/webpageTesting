@@ -314,4 +314,19 @@ div.noSelect~.blueBox {
     background: blue;
 }
 
+
+
+/* content styling */
+#memoji img{
+    width: 90%;
+    height: 90%;
+}
+
+#memoji{
+    height: 100%;
+    justify-content: center;
+    display: flex;
+    align-items: center;
+}
+
 /*https://www.toptal.com/designers/ui/neumorphic-ui-design*/
