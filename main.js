@@ -132,15 +132,27 @@ function updateMain() {
 //temp func new
 function moveNew() {
     main = document.getElementById("mainContainer");
+    l1 = document.getElementsByClassName("page1");
+    l2 = document.getElementsByClassName("page2");
+    l3 = document.getElementsByClassName("page3");
     if (navPos == 0) {
         main.style.gridTemplateRows = ".7fr .2fr 0.2fr 1fr";
         main.style.gridTemplateColumns = "1fr 1fr .5fr .5fr";
+        for(i=0;i<l1.length;i++){ l1[i].style.opacity=1 }
+        for(i=0;i<l2.length;i++){ l2[i].style.opacity=0 }
+        for(i=0;i<l3.length;i++){ l3[i].style.opacity=0 }
     } else if (navPos == 1) {
         main.style.gridTemplateRows = "1fr .2fr 0.2fr .7fr";
         main.style.gridTemplateColumns = "1fr 1fr .5fr .5fr";
+        for(i=0;i<l1.length;i++){ l1[i].style.opacity=0}
+        for(i=0;i<l2.length;i++){ l2[i].style.opacity=1}
+        for(i=0;i<l3.length;i++){ l3[i].style.opacity=0}
     } else if (navPos == 2) {
         main.style.gridTemplateRows = "1fr .2fr 0.2fr .7fr";
         main.style.gridTemplateColumns = ".75fr 0.5fr 0.75fr 0.5fr";
+        for(i=0;i<l1.length;i++){ l1[i].style.opacity=0 }
+        for(i=0;i<l2.length;i++){ l2[i].style.opacity=0 }
+        for(i=0;i<l3.length;i++){ l3[i].style.opacity=1 }
     }
 }
 

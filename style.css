@@ -329,4 +329,8 @@ div.noSelect~.blueBox {
     align-items: center;
 }
 
+.glass span{
+    transition: 0.5s ease-out
+}
+
 /*https://www.toptal.com/designers/ui/neumorphic-ui-design*/
