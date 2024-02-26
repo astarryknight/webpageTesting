@@ -159,5 +159,7 @@ function moveNew() {
 
 //todo - separate by files for ease of access and readability
 
+//todo - add page for qualifications/stuff i know how to do (icons - figma/notion/inventor/illustrator/etc)
+
 //update page on-load
 updateMain();

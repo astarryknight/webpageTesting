@@ -315,6 +315,35 @@ div.noSelect~.blueBox {
 }
 
 
+/* footer links */
+#footerContainer{
+    margin-top: 2.75vh;
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+    justify-content: space-around;
+}
+
+.link{
+    width: 3em;
+    margin: 0em 0.75em;
+}
+
+.link img:hover, .link:hover{
+    cursor: pointer;
+    border: 1px red solid;
+}
+
+#footerContainer div:hover{
+    cursor: pointer;
+    border: 1px red solid;
+}
+
+.link img{
+    width:100%;
+    height:100%;
+}
+
 
 /* content styling */
 #memoji img{
@@ -332,5 +361,6 @@ div.noSelect~.blueBox {
 .glass span{
     transition: 0.5s ease-out
 }
+
 
 /*https://www.toptal.com/designers/ui/neumorphic-ui-design*/
