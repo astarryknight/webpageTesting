@@ -322,6 +322,7 @@ div.noSelect~.blueBox {
     align-items: center;
     flex-direction: row;
     justify-content: space-around;
+    z-index: 2;
 }
 
 .link{
@@ -331,12 +332,6 @@ div.noSelect~.blueBox {
 
 .link img:hover, .link:hover{
     cursor: pointer;
-    border: 1px red solid;
-}
-
-#footerContainer div:hover{
-    cursor: pointer;
-    border: 1px red solid;
 }
 
 .link img{

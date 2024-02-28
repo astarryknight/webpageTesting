@@ -160,6 +160,7 @@ function moveNew() {
 //todo - separate by files for ease of access and readability
 
 //todo - add page for qualifications/stuff i know how to do (icons - figma/notion/inventor/illustrator/etc)
+//Inventor, Onshape, Figma, Photoshop, Illustrator, (lightroom), Davinci Resolve, Notion, VSCode?, Python, Java, Javscript, HTML5, Arduino
 
 //update page on-load
 updateMain();

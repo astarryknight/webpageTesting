@@ -1,5 +1,5 @@
 {
-    "version": "0.1.0",
+    "version": "2.0.0",
     "command": "explorer",
     "windows": {
         "command": "explorer.exe"
@@ -7,17 +7,5 @@
     "args": [
         "index.html"
     ],
-    "tasks": [
-        {
-            "label": "explorer.exe",
-            "args": [
-                "index.html"
-            ],
-            "problemMatcher": [],
-            "group": {
-                "kind": "build",
-                "isDefault": true
-            }
-        }
-    ]
+    "tasks": []
 }
