@@ -30,6 +30,19 @@ function navBarMoveTo(element){
     parent.insertBefore(nav, element);
 }
 
+function responsiveNav(){
+    var nav = document.getElementById("navContainer");
+    if(window.visualViewport.width<1002){
+        navBarMoveTo(document.getElementById("wrapper"));
+    } else{
+        navBarMoveTo(document.getElementById("footerContainer"));
+    }
+}
+
+visualViewport.onresize = () => {
+    responsiveNav();
+};
+
 
 //nav bar navigation handling
 navPos = 0; //0 indexed var for page position
@@ -172,3 +185,4 @@ function moveNew() {
 
 //update page on-load
 updateMain();
+responsiveNav()
