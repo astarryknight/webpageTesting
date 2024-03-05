@@ -23,6 +23,14 @@ document.getElementById("thmToggle").addEventListener("click", function (e) {
 });
 
 
+//render navbar in correct DOM position
+function navBarMoveTo(element){
+    var nav = document.getElementById("navContainer");
+    var parent = document.body;
+    parent.insertBefore(nav, element);
+}
+
+
 //nav bar navigation handling
 navPos = 0; //0 indexed var for page position
 

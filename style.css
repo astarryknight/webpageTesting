@@ -358,4 +358,61 @@ div.noSelect~.blueBox {
 }
 
 
+
+/* mobile view support */
+@media screen and (max-width: 1002px) {
+    
+    #headerContainer {
+        width: 80vw;
+        margin-top: 5vh;
+    }
+
+    #mainText {
+        font-size: 3em;
+    }
+
+    #subText {
+        font-size: 1.5em;
+    }
+
+    #thmToggle {
+        grid-row: 2/3;
+        display: flex;
+        justify-content: flex-end;
+        align-items: center;
+    }
+
+    #thmToggle svg {
+        width: 1.5em;
+    }
+
+    #wrapper {
+        height: 50vh;
+        width: 80vw;
+    }
+
+    #mainContainer {
+        width: 80vw;
+        height: 50vh;
+    }
+
+    #bg {
+        width: 100vh;
+    }
+
+    #navContainer {
+        width: 40vw;
+        height: 5vh;
+        margin-top: 3vh;
+    }
+
+    #footerContainer{
+        margin-top: 3vh;
+    }
+
+    .glass span{
+        font-size: 0.75em;
+    }
+}
+
 /*https://www.toptal.com/designers/ui/neumorphic-ui-design*/
