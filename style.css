@@ -360,7 +360,7 @@ div.noSelect~.blueBox {
 
 
 
-/* mobile view support */
+/* tablet view support */
 @media screen and (max-width: 1002px) {
     
     #bg{
@@ -420,6 +420,17 @@ div.noSelect~.blueBox {
 
     .glass span{
         font-size: 0.75em;
+    }
+}
+
+/* mobile view support */
+@media screen and (max-width: 350px) {
+    #mainText {
+        font-size: 1.5em;
+    }
+
+    #subText {
+        font-size: 1em;
     }
 }
 
