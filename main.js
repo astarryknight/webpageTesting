@@ -1,5 +1,6 @@
 tg = 0; //dark/light mode toggle ctr, %2 to switch between states
 rotInc = 90;//background rotation increment (degrees)
+mobile = false; //mobile device variable
 
 //check for dark mode - https://stackoverflow.com/questions/56393880/how-do-i-detect-dark-mode-using-javascript
 if (window.matchMedia && window.matchMedia('(prefers-color-scheme: dark)').matches) {
@@ -34,8 +35,10 @@ function responsiveNav(){
     var nav = document.getElementById("navContainer");
     if(window.visualViewport.width<1002){
         navBarMoveTo(document.getElementById("wrapper"));
+        mobile=true;
     } else{
         navBarMoveTo(document.getElementById("footerContainer"));
+        mobile=false;
     }
 }
 
@@ -89,19 +92,33 @@ for (i = 0; i < nav.length; i++) {
 
 //arrow navigation handling
 document.getElementById("right").addEventListener("click", function (e) {
-    document.getElementById(getNavElement(navPos)).classList.remove("select");
-    document.getElementById(getNavElement(navPos)).classList.add("noSelect");
-    document.getElementById(getNavElement(navPos)).parentElement.style.background = "transparent";
-    navPos++;
-    updateMain();
+    moveRight();
 });
 document.getElementById("left").addEventListener("click", function (e) {
-    document.getElementById(getNavElement(navPos)).classList.remove("select");
-    document.getElementById(getNavElement(navPos)).classList.add("noSelect");
-    document.getElementById(getNavElement(navPos)).parentElement.style.background = "transparent";
-    navPos--;
-    updateMain();
+    moveLeft();
 });
+
+
+function moveRight(){
+    if(navPos!=2){
+        document.getElementById(getNavElement(navPos)).classList.remove("select");
+        document.getElementById(getNavElement(navPos)).classList.add("noSelect");
+        document.getElementById(getNavElement(navPos)).parentElement.style.background = "transparent";
+        navPos++;
+        updateMain();
+    }
+}
+
+function moveLeft(){
+    if(navPos!=0){
+        document.getElementById(getNavElement(navPos)).classList.remove("select");
+        document.getElementById(getNavElement(navPos)).classList.add("noSelect");
+        document.getElementById(getNavElement(navPos)).parentElement.style.background = "transparent";
+        navPos--;
+        updateMain();
+    }
+}
+
 
 function hasClass(element, className){
     for(i=0;i<element.classList.length;i++) { 
@@ -152,30 +169,97 @@ function updateMain() {
 
 //temp func new
 function moveNew() {
+
+    mobileRows = "1fr 0.5fr 1fr 1fr 0.5fr"
+    mobileCols = "1fr 0.5fr 0.5fr 1fr"
+
     main = document.getElementById("mainContainer");
     l1 = document.getElementsByClassName("page1");
     l2 = document.getElementsByClassName("page2");
     l3 = document.getElementsByClassName("page3");
     if (navPos == 0) {
-        main.style.gridTemplateRows = ".7fr .2fr 0.2fr 1fr";
-        main.style.gridTemplateColumns = "1fr 1fr .5fr .5fr";
+        if(!mobile){
+            main.style.gridTemplateRows = ".7fr .2fr 0.2fr 1fr";
+            main.style.gridTemplateColumns = "1fr 1fr .5fr .5fr";
+        } else {
+            main.style.gridTemplateRows = mobileRows;
+            main.style.gridTemplateColumns = mobileCols;
+        }
+
         for(i=0;i<l1.length;i++){ l1[i].style.opacity=1 }
         for(i=0;i<l2.length;i++){ l2[i].style.opacity=0 }
         for(i=0;i<l3.length;i++){ l3[i].style.opacity=0 }
     } else if (navPos == 1) {
-        main.style.gridTemplateRows = "1fr .2fr 0.2fr .7fr";
-        main.style.gridTemplateColumns = "1fr 1fr .5fr .5fr";
+        if(!mobile){
+            main.style.gridTemplateRows = "1fr .2fr 0.2fr .7fr";
+            main.style.gridTemplateColumns = "1fr 1fr .5fr .5fr";
+        } else {
+            main.style.gridTemplateRows = mobileRows;
+            main.style.gridTemplateColumns = mobileCols;
+        } 
+
         for(i=0;i<l1.length;i++){ l1[i].style.opacity=0}
         for(i=0;i<l2.length;i++){ l2[i].style.opacity=1}
         for(i=0;i<l3.length;i++){ l3[i].style.opacity=0}
     } else if (navPos == 2) {
-        main.style.gridTemplateRows = "1fr .2fr 0.2fr .7fr";
-        main.style.gridTemplateColumns = ".75fr 0.5fr 0.75fr 0.5fr";
+        if(!mobile){
+            main.style.gridTemplateRows = "1fr .2fr 0.2fr .7fr";
+            main.style.gridTemplateColumns = ".75fr 0.5fr 0.75fr 0.5fr";    
+        } else {
+            main.style.gridTemplateRows = mobileRows;
+            main.style.gridTemplateColumns = mobileCols;
+        } 
+        
         for(i=0;i<l1.length;i++){ l1[i].style.opacity=0 }
         for(i=0;i<l2.length;i++){ l2[i].style.opacity=0 }
         for(i=0;i<l3.length;i++){ l3[i].style.opacity=1 }
     }
 }
+
+
+
+// mobile swiping implementation
+document.addEventListener('touchstart', handleTouchStart, false);        
+document.addEventListener('touchmove', handleTouchMove, false);
+
+var xDown = null;                                                        
+var yDown = null;
+
+function getTouches(evt) {
+  return evt.touches      // browser API
+}                                                     
+                                                                         
+function handleTouchStart(evt) {
+    const firstTouch = getTouches(evt)[0];                                      
+    xDown = firstTouch.clientX;                                      
+    yDown = firstTouch.clientY;                                      
+};                                                
+                                                                         
+function handleTouchMove(evt) {
+    if ( ! xDown || ! yDown ) {
+        return;
+    }
+
+    var xUp = evt.touches[0].clientX;                                    
+    var yUp = evt.touches[0].clientY;
+
+    var xDiff = xDown - xUp;
+    var yDiff = yDown - yUp;
+    
+    if ( Math.abs( xDiff ) > Math.abs( yDiff ) ) {/*most significant*/
+        if ( xDiff > 0 ) {
+            /* left swipe */ 
+            moveRight();
+        } else {
+            /* right swipe */
+            moveLeft();
+        }                       
+    }                                                               
+    /* reset values */
+    xDown = null;
+    yDown = null;                                             
+};
+
 
 
 //todo - separate by files for ease of access and readability
@@ -185,4 +269,5 @@ function moveNew() {
 
 //update page on-load
 updateMain();
-responsiveNav()
+responsiveNav();
+moveNew();
