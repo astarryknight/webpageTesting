@@ -341,7 +341,7 @@ div.noSelect~.blueBox {
 }
 
 
-/* content styling */
+/* content styling (page2)*/
 #memoji img{
     width: 90%;
     height: 90%;
@@ -364,6 +364,7 @@ div.noSelect~.blueBox {
     display: block;
 }
 
+/*depthography*/
 #depthography img{
     width:90%;
     height:80%;
@@ -378,21 +379,104 @@ div.noSelect~.blueBox {
     margin: 1vh;
     position: relative;
     transition: ease-out .25s;
-    top:0;
+    top:1vh;
+}
+
+/*self tightening shoes*/
+#stshoes img{
+    width:80%;
+    height:70%;
+    margin-bottom: -3vh;
+    position: relative;
+    transition: ease-out .25s;
+    top:1vh;
+    filter: drop-shadow(.25em .25em .2em #808080);
+}
+
+#stshoes p{
+    margin: 1vh;
+    position: relative;
+    transition: ease-out .25s;
+    top:2.5vh;
+}
+
+/*custom keyboard*/
+#keyboard img{
+    width: 80%;
+    height: 80%;
+    margin-bottom: -5vh;
+    margin-top: 1vh;
+    position: relative;
+    transition: ease-out .25s;
+    top:1vh;
+    filter: drop-shadow(.25em .25em .2em #808080);
+}
+
+#keyboard p{
+    margin: 1vh;
+    position: relative;
+    transition: ease-out .25s;
+    top:1.5vh;
+}
+
+/*ghost chessboard*/
+#gchess img{
+    width: 80%;
+    height: 80%;
+    margin-bottom: -5vh;
+    margin-top: 1vh;
+    position: relative;
+    transition: ease-out .25s;
+    top:1vh;
+    filter: drop-shadow(.25em .25em .2em #808080);
+}
+
+#gchess p{
+    margin: 1vh;
+    position: relative;
+    transition: ease-out .25s;
+    top:1.5vh;
 }
 
 /* hover animations */
+#cont2:hover .coverImg{
+    top: -.8vh;
+}
+
+#cont2:hover p{
+    top: -.8vh;
+}
+
+#cont2:hover{
+    cursor:pointer;
+}
+
+
 #cont6:hover .coverImg{
-    top: -.75vh;
+    top: -.8vh;
 }
 
 #cont6:hover p{
-    top: -.75vh;
+    top: -.8vh;
 }
 
 #cont6:hover{
     cursor:pointer;
 }
+
+
+#cont7:hover .coverImg{
+    top: 0vh;
+}
+
+#cont7:hover p{
+    top: .5vh;
+}
+
+#cont7:hover{
+    cursor:pointer;
+}
+
 
 
 /* tablet view support */
