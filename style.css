@@ -443,7 +443,38 @@ div.noSelect~.blueBox {
     font-size:3em;
 }
 
+/*Coptic Wordle*/
+#cwordle img{
+    width: 85%;
+    position: relative;
+    transition: ease-out .25s;
+    top:3vh;
+    filter: drop-shadow(.25em .25em .2em #808080);
+    border-radius: 15px;
+}
+
+#cwordle p{
+    margin: 1vh;
+    position: relative;
+    transition: ease-out .25s;
+    top:4vh;
+}
+
 /* hover animations */
+#cont1:hover .coverImg{
+    top: 2vh;
+}
+
+#cont1:hover p{
+    top: 2vh;
+}
+
+/*TODO FIX THIS HOVER HAPPENING ON ALL PAGES!!!*/
+#cont1:hover{
+    cursor:pointer;
+}
+
+
 #cont2:hover .coverImg{
     top: -.8vh;
 }

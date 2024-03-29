@@ -167,6 +167,9 @@ function updateMain() {
             document.getElementById(getNavElement(i)).parentElement.style.color = (tg % 2 == 0) ? "black" : "white";
         }
     }
+    if(document.getElementById("gchess").style.display=="block"){
+        document.getElementById("gchess").style.display="flex";
+    }
 }
 
 //temp func new
@@ -188,9 +191,9 @@ function moveNew() {
             main.style.gridTemplateColumns = mobileCols;
         }
 
-        for(i=0;i<l1.length;i++){ l1[i].style.opacity=1 }
-        for(i=0;i<l2.length;i++){ l2[i].style.opacity=0 }
-        for(i=0;i<l3.length;i++){ l3[i].style.opacity=0 }
+        for(i=0;i<l1.length;i++){ l1[i].style.display="block" }
+        for(i=0;i<l2.length;i++){ l2[i].style.display="none" }
+        for(i=0;i<l3.length;i++){ l3[i].style.display="none" }
     } else if (navPos == 1) {
         if(!mobile){
             main.style.gridTemplateRows = "1fr .2fr 0.2fr .7fr";
@@ -200,9 +203,9 @@ function moveNew() {
             main.style.gridTemplateColumns = mobileCols;
         } 
 
-        for(i=0;i<l1.length;i++){ l1[i].style.opacity=0}
-        for(i=0;i<l2.length;i++){ l2[i].style.opacity=1}
-        for(i=0;i<l3.length;i++){ l3[i].style.opacity=0}
+        for(i=0;i<l1.length;i++){ l1[i].style.display="none" }
+        for(i=0;i<l2.length;i++){ l2[i].style.display="block" }
+        for(i=0;i<l3.length;i++){ l3[i].style.display="none" }
     } else if (navPos == 2) {
         if(!mobile){
             main.style.gridTemplateRows = "1fr .2fr 0.2fr .7fr";
@@ -212,9 +215,9 @@ function moveNew() {
             main.style.gridTemplateColumns = mobileCols;
         } 
         
-        for(i=0;i<l1.length;i++){ l1[i].style.opacity=0 }
-        for(i=0;i<l2.length;i++){ l2[i].style.opacity=0 }
-        for(i=0;i<l3.length;i++){ l3[i].style.opacity=1 }
+        for(i=0;i<l1.length;i++){ l1[i].style.display="none" }
+        for(i=0;i<l2.length;i++){ l2[i].style.display="none" }
+        for(i=0;i<l3.length;i++){ l3[i].style.display="block" }
     }
 }
 
