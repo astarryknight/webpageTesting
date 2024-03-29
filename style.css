@@ -420,22 +420,27 @@ div.noSelect~.blueBox {
 }
 
 /*ghost chessboard*/
+#gchess{
+    display: flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+    height:100%;
+}
+
 #gchess img{
-    width: 80%;
-    height: 80%;
-    margin-bottom: -5vh;
-    margin-top: 1vh;
+    width: 15%;
     position: relative;
     transition: ease-out .25s;
-    top:1vh;
+    top:0vh;
     filter: drop-shadow(.25em .25em .2em #808080);
 }
 
 #gchess p{
-    margin: 1vh;
     position: relative;
     transition: ease-out .25s;
-    top:1.5vh;
+    top:0vh;
+    font-size:3em;
 }
 
 /* hover animations */
@@ -448,6 +453,19 @@ div.noSelect~.blueBox {
 }
 
 #cont2:hover{
+    cursor:pointer;
+}
+
+
+#cont5:hover .coverImg{
+    top: -.8vh;
+}
+
+#cont5:hover p{
+    top: -.8vh;
+}
+
+#cont5:hover{
     cursor:pointer;
 }
 
