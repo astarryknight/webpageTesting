@@ -358,6 +358,11 @@ div.noSelect~.blueBox {
     transition: 0.5s ease-out
 }
 
+#donut{
+    width: 100%;
+    height: 100%;
+    display: block;
+}
 
 
 /* tablet view support */
