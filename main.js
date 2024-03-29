@@ -14,10 +14,12 @@ document.getElementById("thmToggle").addEventListener("click", function (e) {
     if (tg % 2 == 0) {
         root.setAttribute('color-scheme', "dark");
         for(i=0;i<b.length;i++) { b.color="white" } //selector box text color handling
+        document.getElementById("ascii").style.color="white";
     }
     else {
         root.setAttribute('color-scheme', 'light');
         for(i=0;i<b.length;i++) { b.color="black" }
+        document.getElementById("ascii").style.color="black";
     }
     tg++;
     updateMain();

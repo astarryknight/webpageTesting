@@ -47,15 +47,16 @@ function init() {
     effect = new AsciiEffect( renderer, ' .,-~:;=!*#$@', { invert: true } );
     effect.setSize( window.innerWidth, window.innerHeight );
     //effect.setSize( effect.domElement.parentElement.width, effect.domElement.parentElement.height );
+    effect.domElement.id = "ascii";
     effect.domElement.style.color = 'white';
     effect.domElement.style.backgroundColor = 'transparent';
-    effect.domElement.style.fontSize = '0.5em';
+    effect.domElement.style.marginTop= '-2vh';
 
     // Special case: append effect.domElement, instead of renderer.domElement.
     // AsciiEffect creates a custom domElement (a div container) where the ASCII elements are placed.
 
     document.getElementById("donut").appendChild( effect.domElement );
-    effect.setSize( effect.domElement.parentElement.offsetWidth, effect.domElement.parentElement.offsetHeight);
+    effect.setSize( effect.domElement.parentElement.offsetWidth*(9/10), effect.domElement.parentElement.offsetHeight*(9/10));
     console.log(effect.domElement.parentElement.offsetWidth);
 
     //
@@ -72,7 +73,8 @@ function onWindowResize() {
 }
 
 document.getElementById("cont1").addEventListener("transitionend", (event) => {
-    effect.setSize( effect.domElement.parentElement.offsetWidth, effect.domElement.parentElement.offsetHeight );
+    effect.setSize( effect.domElement.parentElement.offsetWidth*(9/10), effect.domElement.parentElement.offsetHeight*(9/10));
+    effect.domElement.style.marginTop= '-2vh';
 });
 
 //
