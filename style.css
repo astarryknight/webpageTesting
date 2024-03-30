@@ -460,6 +460,24 @@ div.noSelect~.blueBox {
     top:4vh;
 }
 
+/*portfolio site*/
+#portfolio img{
+    width: 85%;
+    position: relative;
+    transition: ease-out .25s;
+    top:2vh;
+    filter: drop-shadow(.25em .25em .2em #808080);
+    border-radius: 15px;
+}
+
+#portfolio p{
+    margin: 1vh;
+    position: relative;
+    transition: ease-out .25s;
+    top:2.5vh;
+}
+
+
 /* hover animations */
 #cont1:hover .coverImg{
     top: 2vh;
@@ -484,6 +502,20 @@ div.noSelect~.blueBox {
 }
 
 #cont2:hover{
+    cursor:pointer;
+}
+
+
+#cont4:hover .coverImg{
+    top: 1vh;
+}
+
+#cont4:hover p{
+    top: 1vh;
+}
+
+/*TODO FIX THIS HOVER HAPPENING ON ALL PAGES!!!*/
+#cont4:hover{
     cursor:pointer;
 }
 
