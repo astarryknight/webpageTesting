@@ -73,8 +73,9 @@ function onWindowResize() {
 }
 
 document.getElementById("cont1").addEventListener("transitionend", (event) => {
-    effect.setSize( effect.domElement.parentElement.offsetWidth*(9/10), effect.domElement.parentElement.offsetHeight*(9/10));
-    effect.domElement.style.marginTop= '-2vh';
+    if(effect.domElement.parentElement.offsetWidth!=0 && effect.domElement.parentElement.offsetHeight!=0){
+        effect.setSize( effect.domElement.parentElement.offsetWidth*(9/10), effect.domElement.parentElement.offsetHeight*(9/10));
+    }
 });
 
 //
