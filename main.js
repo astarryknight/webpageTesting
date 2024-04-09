@@ -191,9 +191,9 @@ function moveNew() {
             main.style.gridTemplateColumns = mobileCols;
         }
 
-        for(i=0;i<l1.length;i++){ l1[i].style.display="block" }
-        for(i=0;i<l2.length;i++){ l2[i].style.display="none" }
-        for(i=0;i<l3.length;i++){ l3[i].style.display="none" }
+        for(i=0;i<l1.length;i++){ l1[i].style.display="block"; l1[i].style.width="100%"; l1[i].style.height="100%"; }
+        for(i=0;i<l2.length;i++){ l2[i].style.display="none"; l2[i].style.width="0%"; l2[i].style.height="0%"; }
+        for(i=0;i<l3.length;i++){ l3[i].style.display="none"; l3[i].style.width="0%"; l3[i].style.height="0%"; }
     } else if (navPos == 1) {
         if(!mobile){
             main.style.gridTemplateRows = "1fr .2fr 0.2fr .7fr";
@@ -203,9 +203,9 @@ function moveNew() {
             main.style.gridTemplateColumns = mobileCols;
         } 
 
-        for(i=0;i<l1.length;i++){ l1[i].style.display="none" }
-        for(i=0;i<l2.length;i++){ l2[i].style.display="block" }
-        for(i=0;i<l3.length;i++){ l3[i].style.display="none" }
+        for(i=0;i<l1.length;i++){ l1[i].style.display="none"; l1[i].style.width="0%"; l1[i].style.height="0%"; }
+        for(i=0;i<l2.length;i++){ l2[i].style.display="block"; l2[i].style.width="100%"; l2[i].style.height="100%"; }
+        for(i=0;i<l3.length;i++){ l3[i].style.display="none"; l3[i].style.width="0%"; l3[i].style.height="0%"; }
     } else if (navPos == 2) {
         if(!mobile){
             main.style.gridTemplateRows = "1fr .2fr 0.2fr .7fr";
@@ -215,9 +215,9 @@ function moveNew() {
             main.style.gridTemplateColumns = mobileCols;
         } 
         
-        for(i=0;i<l1.length;i++){ l1[i].style.display="none" }
-        for(i=0;i<l2.length;i++){ l2[i].style.display="none" }
-        for(i=0;i<l3.length;i++){ l3[i].style.display="block" }
+        for(i=0;i<l1.length;i++){ l1[i].style.display="none"; l1[i].style.width="0%"; l1[i].style.height="0%"; }
+        for(i=0;i<l2.length;i++){ l2[i].style.display="none"; l2[i].style.width="0%"; l2[i].style.height="0%"; }
+        for(i=0;i<l3.length;i++){ l3[i].style.display="block"; l3[i].style.width="100%"; l3[i].style.height="100%"; }
     }
 }
 
