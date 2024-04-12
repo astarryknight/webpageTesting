@@ -223,15 +223,17 @@ function moveNew() {
 
 
 //project onclick handling
-document.getElementById("keyboard").addEventListener("click", async function (e) {
+document.querySelectorAll(".page2").forEach(e => e.addEventListener("click", async function (i) {
     const iframe = document.getElementById("dialogFrame");
-    iframe.src="./projects/keyboard.html";
-    document.getElementById("dialogTitle").textContent = "Custom keyboard";
+    iframe.src="./projects/"+e.id+".html";
+    const title = e.querySelector(".coverTxt").textContent;
+    document.getElementById("dialogTitle").textContent = title;
     await new Promise(r => {
         iframe.onload=r;
     });
     document.getElementById("projectDialog").showModal();
-})
+}));
+
 
 
 //dialog button handling
@@ -294,8 +296,3 @@ function handleTouchMove(evt) {
 updateMain();
 responsiveNav();
 moveNew();
-
-
-
-//REMOVE THIS
-document.getElementById("projectDialog").close()
