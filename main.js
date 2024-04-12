@@ -221,6 +221,19 @@ function moveNew() {
     }
 }
 
+
+//project onclick handling
+document.getElementById("keyboard").addEventListener("click", async function (e) {
+    const iframe = document.getElementById("dialogFrame");
+    iframe.src="./projects/keyboard.html";
+    document.getElementById("dialogTitle").textContent = "Custom keyboard";
+    await new Promise(r => {
+        iframe.onload=r;
+    });
+    document.getElementById("projectDialog").showModal();
+})
+
+
 //dialog button handling
 document.getElementById("dbClose").addEventListener("click", function (e) {
     document.getElementById("projectDialog").close();
@@ -285,4 +298,4 @@ moveNew();
 
 
 //REMOVE THIS
-document.getElementById("projectDialog").showModal()
+document.getElementById("projectDialog").close()
