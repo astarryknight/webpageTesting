@@ -221,6 +221,11 @@ function moveNew() {
     }
 }
 
+//dialog button handling
+document.getElementById("dbClose").addEventListener("click", function (e) {
+    document.getElementById("projectDialog").close();
+});
+
 
 
 // mobile swiping implementation
@@ -276,3 +281,8 @@ function handleTouchMove(evt) {
 updateMain();
 responsiveNav();
 moveNew();
+
+
+
+//REMOVE THIS
+document.getElementById("projectDialog").showModal()
