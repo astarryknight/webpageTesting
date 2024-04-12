@@ -9,3 +9,51 @@ body{
     margin:0;
     padding:0;
 }
+
+#container{
+    width:100%;
+    height: calc(100% - 4vh);
+    position: absolute;
+    top: 4vh;
+    display:flex;
+    flex-direction: row;
+    justify-content: space-evenly;
+    align-items: center;
+}
+
+#res, #text{
+    width: 45%;
+    height: 90%;
+}
+
+#res{
+    border-radius: 15px;
+    background-color: #ff7575;
+    border: .25em solid #b85858;
+}
+
+#text{
+    display: grid;
+    grid-template-rows: 2fr 1fr .75fr;
+    grid-gap: 1.5em;
+}
+
+.textBlock{
+    border-radius: 10px;
+    border: 1px solid blue;
+}
+
+#info{
+    background-color: #D2FFAF;
+    border: .25em solid #91bd70;
+}
+
+#skills{
+    background-color: #AFFFE2;
+    border: .25em solid #76c9ab;
+}
+
+#links{
+    background-color: #be8dec;
+    border: .25em solid #8e6baf;
+}
