@@ -113,7 +113,6 @@ body {
     grid-template-columns: 1fr .1fr;
     grid-template-rows: 1fr 1fr;
     margin-top: 7vh;
-    margin-bottom: 5vh;
     z-index: 1;
     animation: fadeIn 1.25s ease-out;
 }
