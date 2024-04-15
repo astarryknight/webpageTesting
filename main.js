@@ -234,6 +234,17 @@ document.querySelectorAll(".page2").forEach(e => e.addEventListener("click", asy
     document.getElementById("projectDialog").showModal();
 }));
 
+document.getElementById("donut").addEventListener("click", async function (i){
+    const iframe = document.getElementById("dialogFrame");
+    iframe.src="./projects/donut.html";
+    const title = "Donut";
+    document.getElementById("dialogTitle").textContent = title;
+    await new Promise(r => {
+        iframe.onload=r;
+    });
+    document.getElementById("projectDialog").showModal();
+});
+
 
 
 //dialog button handling
