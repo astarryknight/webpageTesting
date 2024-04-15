@@ -113,6 +113,7 @@ body {
     grid-template-columns: 1fr .1fr;
     grid-template-rows: 1fr 1fr;
     margin-top: 7vh;
+    margin-bottom: 5vh;
     z-index: 1;
     animation: fadeIn 1.25s ease-out;
 }
@@ -318,7 +319,7 @@ div.noSelect~.blueBox {
 
 /* footer links */
 #footerContainer{
-    margin-top: 2.75vh;
+    margin-top: 2vh;
     display: flex;
     align-items: center;
     flex-direction: row;
@@ -327,7 +328,7 @@ div.noSelect~.blueBox {
 }
 
 .link{
-    width: 3em;
+    width: 2em;
     margin: 0em 0.75em;
 }
 
@@ -601,6 +602,7 @@ div.noSelect~.blueBox {
 
 #dtRound{
     height: 3.5vh;
+    min-height: 27.5px;
     border-radius: 25px;
     background: #b3b3b3;
     position: absolute;
@@ -613,6 +615,7 @@ div.noSelect~.blueBox {
 
 #dtSquare{
     height: 2vh;
+    min-height: 16px;
     background: #b3b3b3;
     position: absolute;
     width: 100%;
@@ -659,6 +662,8 @@ div.noSelect~.blueBox {
     z-index: 4;
     font-size: 1.65em;
     font-weight: 150;
+    font-style: italic;
+    color: rgb(63, 63, 63);
 }
 
 #projectDialog::backdrop {
